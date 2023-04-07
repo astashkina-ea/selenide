@@ -11,6 +11,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class DifferenceOfElementsTests {
 
     ClassLoader cl = DifferenceOfElementsTests.class.getClassLoader();
+
     @Test
     void selenideElementsTest() {
         URL fileUrl = cl.getResource("index.html");
