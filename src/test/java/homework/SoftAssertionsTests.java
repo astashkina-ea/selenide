@@ -19,6 +19,19 @@ public class SoftAssertionsTests {
         $(".wiki-rightbar").shouldHave(text("SoftAssertions"));
         // - Откройте страницу SoftAssertions, проверьте что внутри есть пример кода для JUnit5
         $(".wiki-pages-box").$$(".wiki-more-pages").last().$("a").click();
-        $("#wiki-body").shouldHave(text("Using JUnit5 extend test class:"));
+        $("#wiki-body").shouldHave(
+                text("Using JUnit5 extend test class:"),
+                text("@ExtendWith({SoftAssertsExtension.class})\n" +
+                        "class Tests {\n" +
+                        "  @Test\n" +
+                        "  void test() {\n" +
+                        "    Configuration.assertionMode = SOFT;\n" +
+                        "    open(\"page.html\");\n" +
+                        "\n" +
+                        "    $(\"#first\").should(visible).click();\n" +
+                        "    $(\"#second\").should(visible).click();\n" +
+                        "  }\n" +
+                        "}")
+        );
     }
 }

@@ -3,14 +3,18 @@ package homework;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
 
+import java.net.URL;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class DifferenceOfElementsTests {
 
+    ClassLoader cl = DifferenceOfElementsTests.class.getClassLoader();
     @Test
-    void case1() {
-        open("file:////Users/user/Desktop/qaguru/selenide_hw/src/test/resources/index.html");
+    void selenideElementsTest() {
+        URL fileUrl = cl.getResource("index.html");
+        open(fileUrl);
         SelenideElement str = $("h1 div");
         SelenideElement str1 = $("h1").$("div");
         System.out.println("$(\"h1 div\") " + str);
