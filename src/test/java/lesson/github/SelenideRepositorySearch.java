@@ -18,7 +18,6 @@ public class SelenideRepositorySearch {
         // проверка: заголовок selenide/selenide
         $("#repository-container-header").shouldHave(text("selenide / selenide"));
 
-
         // ARRANGE - предусловие
         // ACT - действие
         // ACT
