@@ -142,6 +142,7 @@ public class Snippets {
         $("").shouldBe(visible, Duration.ofSeconds(30)); //ожидание того места который мы проверяем (в данном случае максимум 30 сек)
     }
 
+    //УСЛОВИЯ
     void conditions_examples() {
         $("").shouldBe(visible); //появилось
         $("").shouldBe(hidden); //исчезло
